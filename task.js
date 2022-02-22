@@ -8,11 +8,10 @@ function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
   }
 
-const wasHereWindow = getCookie(`showed`);
+const wasHereWindow = getCookie(`action`);
 
 if (!wasHereWindow) {
     modalWindow.classList.add("modal_active");
-    document.cookie = 'showed=true; max-age=360000000';
     const closeModal = modalWindow.querySelector(`.modal__close_times`);
     closeModal.addEventListener(`click`, ()=> {
         document.cookie = 'action=Close; max-age=360000000';
